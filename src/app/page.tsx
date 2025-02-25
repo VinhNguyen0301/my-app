@@ -41,6 +41,12 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
+             {/* <Image
+      src="https://s3.amazonaws.com/my-bucket/profile.png"
+      alt="Picture of the author"
+      width={500}
+      height={500}
+    /> */}
             Custom Button 2
           </a>
         </div>
