@@ -1,14 +1,14 @@
 import { getPosts } from '@/lib/posts'
-import Post from '@/app/ui/post'
+import Posts from '@/app/ui/posts'
+import { Suspense } from 'react'
  
 export default async function Page() {
-  const posts = await getPosts()
+  const data = await fetch('https://api.vercel.app/blog')
+  const posts = await data.json()
  
   return (
-    <ul>
-      {posts.map((post) => (
-        <Post key={post.id} post={post} />
-      ))}
-    </ul>
+    <Suspense fallback={<div>Loading...</div>}>
+    <Posts posts={posts} />
+    </Suspense>
   )
 }
